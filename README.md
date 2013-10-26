@@ -224,4 +224,84 @@ new_hash[key.upcase] = val.upcase
 new_hash
 end
 
+Klassen
+-------
+
+* werden Groß geschrieben
+
+class Klassenname
+def self.welcome
+puts "guten Morgen"
+end
+end
+
+1.9.3 (main):0 > Greeter.welcome
+guten Morgen
+=> nil
+
+Greeter.rb
+
+Inhalt:
+class Greeter
+
+	def hello(salutation, name)
+		puts "Hello #{salutation} #{name}"
+	end
+
+	def self.welcome
+	puts "hello World"
+	end
+
+end
+
+# Direkt auf der Klasse aufgerufen
+Greeter.welcome
+
+# mit Insatz und Instanzmethoden
+g = Greeter.new
+g.hello("Herr","Denis")
+
+g.hello("",10)
+
+
+Überladen von Funktionen nicht möglich
+
+Statische Klassenvariablen und Klassenvariablen
+```ruby
+class Greeter
+
+	@@counter = 0
+
+	def initialize(salutation)
+		@salutation = salutation
+		@@counter +=1
+	end
+
+	def hello(name)
+		puts "Hello #{@salutation} #{name} #{@@counter}"
+	end
+
+#	def hello(salutation, name)
+#		puts "Hello #{salutation} #{name}"
+#	end
+
+	def self.welcome
+	puts "hello World"
+	end
+
+end
+
+´´´
+
+# Direkt auf der Klasse aufgerufen
+Greeter.welcome
+
+# mit Insatz und Instanzmethoden
+g = Greeter.new("Herr")
+g.hello("Denis")
+
+g = Greeter.new("Frau")
+
+g.hello(10)
+
 
