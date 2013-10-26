@@ -1,8 +1,11 @@
 Übersicht
+---------
 
 Anfang
+------
 
 Ruby Grundlagen
+---------------
 
 * Ruby ist eine interpretierte Sprache
 * keien Typisierung
@@ -191,7 +194,7 @@ h = {:eins => "zwei"}
 h = {eins: "zwei"}
 
 
-´´´paare.each{ |key,val| puts "#{key}: #{val}"}```
+paare.each{ |key,val| puts "#{key}: #{val}"}
 
 peter: Toni
 hansi: Vroni
@@ -201,5 +204,24 @@ karsten: Maxim
   :karsten => "Maxim",
     :peter => "Toni"
 }
+
+
+Hash.collect
+
+paare.collect { |key, val| val }
+
+paare.collect do |key, val|
+key.upcase
+end
+
+
+Strichpunkt ";" für mehr als ein Befehl in einer Zeile
+
+paare.inject({}){|hsh, (key,val)| hsh[key.upcase] = val.upcase; hsh}
+
+paare,inject({}) do |new_hash, (key, val)|
+new_hash[key.upcase] = val.upcase
+new_hash
+end
 
 
