@@ -291,7 +291,7 @@ class Greeter
 
 end
 
-´´´
+```
 
 # Direkt auf der Klasse aufgerufen
 Greeter.welcome
