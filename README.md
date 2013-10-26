@@ -290,8 +290,8 @@ class Greeter
 	end
 
 end
-
 ```
+
 
 # Direkt auf der Klasse aufgerufen
 Greeter.welcome
