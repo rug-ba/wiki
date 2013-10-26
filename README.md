@@ -158,3 +158,48 @@ Unterschied each & collect
 * collect liefert ein array zurück
 
 auto.collect{|auto| auto.upcase}.each{ |auto| puts auto }
+
+auto.map{ |auto| auto.upcase }
+
+name = "Peter "
+name.strip
+--> "Peter"
+name.strip.upcase
+--> "PETER"
+
+name = " Peter Schön "
+
+name.strip.gsub("Schön", "Hässlich").upcase
+
+gesubt = name.strip.gsub("Schön", "Hässlich").upcase
+
+Assoziative Arrays - Hashs
+------------------
+
+paare = { peter: "Toni",hansi:"Vroni",karsten: "Maxim"}
+
+self.class
+
+Symbole:
+paare[:hansi]
+--> Vroni
+
+h  = {"eins" => "zwei"}
+h["eins"]
+h = {:eins => "zwei"}
+
+h = {eins: "zwei"}
+
+
+´´´paare.each{ |key,val| puts "#{key}: #{val}"}```
+
+peter: Toni
+hansi: Vroni
+karsten: Maxim
+=> {
+    :hansi => "Vroni",
+  :karsten => "Maxim",
+    :peter => "Toni"
+}
+
+
