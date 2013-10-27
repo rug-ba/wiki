@@ -40,7 +40,7 @@ puts "Hello World!"
 ruby hello_world.rb
 ```
 ```ruby
-puts("Hallo Welt!") --> Funktionsaufruf
+puts("Hallo Welt!") # --> Funktionsaufruf
 ```
 
 Klammern nicht extra notwendig, außer bei explziten Dingen
