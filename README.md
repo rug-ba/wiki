@@ -350,7 +350,7 @@ class Greeter
 end
 ```
 
-
+```ruby
 # Direkt auf der Klasse aufgerufen
 Greeter.welcome
 
@@ -362,4 +362,4 @@ g = Greeter.new("Frau")
 
 g.hello(10)
 
-
+```
