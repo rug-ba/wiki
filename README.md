@@ -16,26 +16,32 @@ ruby -v
 
 --> zeigt Version an
 
+```bash
 whereis ruby
+```
 
 --> welche envrionment ist aktiv
 
-
+```bash
 ruby -e 'puts "Hello World!"'
+```
 ergibt
-Hello World!
-
+	Hello World!
+```bash
 mkdir workshop
 gedit hello_world.rb
+```
 
 Code:
 ```ruby
 puts "Hello World!"
 ```
-
+```bash
 ruby hello_world.rb
-
+```
+```ruby
 puts("Hallo Welt!") --> Funktionsaufruf
+```
 
 Klammern nicht extra notwendig, außer bei explziten Dingen
 
