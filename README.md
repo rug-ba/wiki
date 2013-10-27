@@ -636,3 +636,35 @@ Personen
 * Mr. Peter
 * Mrs. Maike
 * Mrs. Stefan
+
+Refactoring von index.html.erb
+-----------------------------
+
+Um Logik aus einem View zu nehmen verlagert man sie in Funktionen in einem Helper.
+
+app/helpes/home/helper
+
+```ruby
+module HomeHelper
+	def determine_salutation(gender)
+		if gender == "male"
+			"Mr."
+		elsif gender == "female"
+			"Mrs."
+		else
+			"Trs."
+		end
+	end
+end
+```
+
+app/views/home/index.html.erb
+
+```html
+<h1>Personen</h1>
+<ul>
+	<% @people.each do |person| %>
+		<li><%= determine_salutation(person.gender) %> <%= person.name %></li>	
+	<% end %>
+</ul>
+```
