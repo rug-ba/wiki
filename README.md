@@ -607,3 +607,32 @@ Nette Seite für Dokus
 
 http://guides.rubyonrails.org
 
+Index-Action soll Liste aller Benutzer ausgeben
+----------------------------
+
+home_controller.rb
+```ruby
+def index
+	@people = Person.all
+end
+```
+
+index.html.erb
+```html
+<h1>Personen</h1>
+<ul>
+	<% @people.each do |person| %>
+		<li><%= person.gender == "male" ? "Mr." : "Mrs." %> <%= person.name %></li>	
+	<% end %>
+</ul>
+```
+
+führt zu
+
+Personen
+* Mrs. Matze
+* Mr. Björn
+* Mr. Torben
+* Mr. Peter
+* Mrs. Maike
+* Mrs. Stefan
