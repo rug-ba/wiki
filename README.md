@@ -704,3 +704,62 @@ config/routes.rb
 
 
 app/controllers/import_controller.rb
+
+cont[(cont.index("<p>")+"<p>".length)..(cont.index("</p>")-1)]
+
+REST in Controllern und Formulare
+-------------------
+
+```bash
+rails g controller people
+```
+app/controllers/people_controller
+
+```ruby
+class PeopleController < ApplicationController
+	def index
+		@people = Person.all
+	end
+
+	def new
+		@person = Person.new
+	end
+
+	def create
+		@person = Person.create(params[:person])
+		redirect_to people_path
+	end
+
+	def edit
+		
+	end
+
+	def update
+		
+	end
+
+	def show
+		
+	end
+
+	def destroy
+		
+	end
+end
+
+```
+
+app/views/person/new.html.erb
+
+```html
+<%= form_for @person do |f| %>
+	<%= f.text_field :name %>
+	<%= f.submit 'Speichern' %>
+<% end %>
+```
+
+Erzeugen aller REST-Routen auf einmal in config/routes.rb:
+
+```ruby
+resources :people
+```
