@@ -516,5 +516,36 @@ $ ->
 
 wenn man in der Config das Environment von Dev auf Prod setzt, dann werden die Assets optimiert bzw. z.B. zusammengepackt
 
-RAILS_ENV = production rake  
+```bash
+RAILS_ENV=production rake assets:precompile
+```
+
 ?bitte ergänzen?
+
+Ein Model anlegen
+-----------------
+
+```bash
+rails g model person name gender
+```
+
+Generiert ein model (Samt Migrationsdatei in db/migrate für die Datenbank) namens person mit den Feldern name und gender.
+
+```bash
+rake db:migrate
+```
+
+Legt die Tabelle entsprechend an
+
+Die Rails console
+---------------
+
+```bash
+rails c
+```
+
+Ausgabe aller Personen (durch das Model angelegt)
+
+```ruby
+Person.all
+```
