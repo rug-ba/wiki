@@ -581,6 +581,11 @@ Suchen nach Objekten:
 
 ```ruby
 maike = Person.find_by_name('Maike')
+
+# find_by liefert nur ein Objekt, find_all_by alle
+
+Person.find_all_by_name('Maike')
+
 Person.where('name like "M%"')
 
 Person.where('name like "%M"').order('name ASC')
@@ -590,4 +595,15 @@ Person.find_by_name_and_gender('Maike','male')
 
 # where kann auch kombiniert werden
 Person.where('name = "Maike"').where('gender = "female')
+
+stefan = Person.new(name:"Stefan")
+stefan.new_record? # => true
+stefan.save
+stefan.new_record? # => false
 ```
+
+Nette Seite für Dokus
+---------------------
+
+http://guides.rubyonrails.org
+
