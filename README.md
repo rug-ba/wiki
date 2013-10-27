@@ -537,7 +537,7 @@ rake db:migrate
 
 Legt die Tabelle entsprechend an
 
-Die Rails console
+Daten anlegen über die Rails console
 ---------------
 
 ```bash
