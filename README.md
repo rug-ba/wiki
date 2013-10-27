@@ -668,3 +668,39 @@ app/views/home/index.html.erb
 	<% end %>
 </ul>
 ```
+
+Namensliste aus dem Internet importieren
+----------------------------
+
+```bash
+rails g controller import
+```
+
+app/controllers/import_controller.rb
+
+```ruby
+require 'open-uri'
+
+class ImportController < ApplicationController
+
+	def import_men
+		html = open("http://www.ta7.de/txt/listen/list0014.htm")
+	end
+
+	def import_women
+		html = open("http://www.ta7.de/txt/listen/list0013.htm")
+	end
+
+end
+
+```
+
+config/routes.rb
+
+```ruby
+	get 'import/women' => 'import#import_women'
+	get 'import/men' => 'import#import_men'
+```
+
+
+app/controllers/import_controller.rb
