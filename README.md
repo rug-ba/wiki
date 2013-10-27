@@ -544,8 +544,19 @@ Die Rails console
 rails c
 ```
 
-Ausgabe aller Personen (durch das Model angelegt)
+
 
 ```ruby
-Person.all
+Person.all #Ausgabe aller Personen (durch das Model angelegt), gibt erstmal keine
+
+p = Person.new
+p.class #zeigt alle Daten am Objekt an
+p.name = "Matze"
+p.gender = "female"
+p.save #Speichert das Objekt in der Datenbank
+Person.all #liefert jetzt was zurück
+Person.first
+
+torben = Person.new(name:"Torben",gender:"male") #Kurzform
+torben.save
 ```
