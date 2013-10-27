@@ -363,3 +363,158 @@ g = Greeter.new("Frau")
 g.hello(10)
 
 ```
+
+Rails
+-----
+
+-r --> remote
+-a --> all
+
+gem search rails -r -a
+
+rails
+
+-d --> Database
+
+rails new greeter
+
+rails new greeter -d mysql
+
+gvim 
+
+rails-Projekt
+-------------
+
+im app-Ordner
+
+MVC
+
+Model --> 
+View --> Optik/GUI
+Controller --> 
+
+config-Ordner
+* Datenbank in database.yml
+
+Environments:
+* Development
+* Test
+* Production
+
+(vorher passwort anpassen (in VM=="vagrant")
+
+//rake db:drop
+
+rake db:create
+
+später migration:
+rake db:migrate
+
+
+Server starten mit:
+rails s
+
+// generatoren/ ?boiled code?
+rails generate
+
+home controller anlegen:
+rails generate controller home
+
+Es wird angelegt:
+* Controller
+* Unit Tests
+* CSS/JS
+
+render text: "Hello World"
+
+Route
+Mapping der URLs
+
+//sidenote
+sudo update-alternatives --config editor
+
+//route:
+get 'home' => 'home#index'
+
+
+index.html.erb:
+<span>Hello World!</span>
+
+// in app/views/layouts/application können die Templates angepasst werden
+
+im controlle rkann das layout mit:
+layout 'home' definiert werden, dann würde er aus dem views /layouts entsprechend das dazugehörige layout verwenden
+
+
+class HomeController < ApplicationController
+
+
+  def index
+    @user_name = "Peter"
+  end
+
+end
+
+
+<span>Hello World, <%=@user_name %>!</span>
+
+
+Debuggen mit Pry
+----------------
+
+im Gemfile:
+gem 'pry-rails'
+gem 'pry-full'
+
+danach gems updaten
+bundle
+
+in Gemfile.lock finden sich alle Gems sowie die Gems welche durch Abhängigkeiten verwendet werden.
+
+binding.pry
+an entsprechender Stelle im Quellcod eeinfügen, der rails server bleibt entsprechend stehen.
+
+ GNU nano 2.2.6           Datei: index.html.erb                              
+
+<span>Hello World, <%=@user_name %>!</span>
+<span><% if @gender == :male %>
+Mr!
+<% else %>
+Mrs!
+<% end %>
+
+Assets - CSS
+------------
+
+
+in index.html.erb:
+```ruby
+<h1>Begrüßung</h1>
+<div>Hello World, <span class="username"><%=@user_name %>!</span></div>
+<span><% if @gender == :male %>
+Mr!
+<% else %>
+Mrs!
+<% end %>
+<a id='click_me' href='#'>Klick Mich</a>
+```
+
+in assets/stylesheets/home.css.scss:
+```scss
+.username { 
+font-weight: bold;
+}
+```
+
+in assets/javascripts/home.js.coffee:
+```coffescript
+$ ->
+	$('#click_me').click ->
+		alert('test')
+```
+
+
+wenn man in der Config das Environment von Dev auf Prod setzt, dann werden die Assets optimiert bzw. z.B. zusammengepackt
+
+RAILS_ENV = production rake  
+?bitte ergänzen?
