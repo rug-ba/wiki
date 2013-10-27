@@ -550,13 +550,44 @@ rails c
 Person.all #Ausgabe aller Personen (durch das Model angelegt), gibt erstmal keine
 
 p = Person.new
-p.class #zeigt alle Daten am Objekt an
+p.class # zeigt alle Daten am Objekt an
 p.name = "Matze"
 p.gender = "female"
 p.save #Speichert das Objekt in der Datenbank
-Person.all #liefert jetzt was zurück
+Person.all # liefert jetzt was zurück
 Person.first
 
-torben = Person.new(name:"Torben",gender:"male") #Kurzform
+torben = Person.new(name:"Torben",gender:"male") # Kurzform
 torben.save
+
+peter = Person.create(name: "Peter", gender:"male") # Kurzform + save
+```
+
+Nettere Formatierung von Person.all
+
+```ruby
+Person.all.to_a
+```
+
+Eintrag löschen
+```ruby
+herbert = Person.last
+herbert.destroy
+
+Person.count
+```
+
+Suchen nach Objekten:
+
+```ruby
+maike = Person.find_by_name('Maike')
+Person.where('name like "M%"')
+
+Person.where('name like "%M"').order('name ASC')
+
+# find_by kann kombiniert werden
+Person.find_by_name_and_gender('Maike','male')
+
+# where kann auch kombiniert werden
+Person.where('name = "Maike"').where('gender = "female')
 ```
