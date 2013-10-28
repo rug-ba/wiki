@@ -7,7 +7,7 @@ Anfang
 Links
 ------
 
-*Ruby Style Guide, Code conventions: https://github.com/bbatsov/ruby-style-guide
+* Ruby Style Guide, Code conventions: https://github.com/bbatsov/ruby-style-guide
 
 
 Ruby Grundlagen
