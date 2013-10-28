@@ -1,8 +1,6 @@
-Übersicht
+Inhalt
 ---------
 
-Anfang
-------
 
 Links
 ------
@@ -10,7 +8,7 @@ Links
 * Ruby Style Guide, Code conventions: https://github.com/bbatsov/ruby-style-guide
 
 
-Ruby Grundlagen
+Ruby Grundlagen vom Oktober-Workshop
 ---------------
 
 * Ruby ist eine interpretierte Sprache
